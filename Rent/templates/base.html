@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+    <head>
+        <title>RENT NOW</title>
+
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/rent.css' %}">
+    </head>
+    <body>
+    <div class="jumbotron">
+    <h1 class="display-3"><a href="/">RENT NOW</a></h1>
+
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

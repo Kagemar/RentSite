@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for ad in ads %}
+    <div class="card border-primary mb-3" style="max-width: 20rem;">
+        <div class="card-header"><a href="{% url 'post_detail' pk=ad.pk %}">{{ ad.title }}</a></div>
+    <div class="card-body">
+
+    <p class="card-text"> Street: {{ ad.localization }}   </p>
+     <p class="card-text">    Description: {{ ad.text }}</p>
+
+
+  </div>
+  </div>
+
+
+
+{% endfor %}
+
+    <a class="btn btn-primary btn-lg btn-block" href="{% url 'post_new' %}">Create new!</a>
+{% endblock %}
+
+

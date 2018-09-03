@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+        <a class="badge badge-dark" href="{% url 'post_edit' pk=ad.pk %}">Edit</a>
+        {% if ad.published_date %}
+            <div class="date">
+                {{ ad.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ ad.title }}</h1>
+
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+        Surface:
+    <span class="badge badge-primary badge-pill">{{ ad.surface }}</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Rooms:
+    <span class="badge badge-primary badge-pill">{{ ad.rooms }}</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Floor:
+    <span class="badge badge-primary badge-pill">{{ ad.floor }}</span>
+  </li>
+</ul>
+
+
+
+{% endblock %}
+
+
+
