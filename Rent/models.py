@@ -3,7 +3,7 @@ from django.utils import timezone
 # Create your models here.
 
 
-2
+
 class Ad(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
@@ -16,8 +16,10 @@ class Ad(models.Model):
     rooms = models.CharField(max_length=20, null=True)
     surface = models.CharField(max_length=20,null=True)
     floor = models.CharField(max_length=20, default=0,null=True)
+    localization = models.CharField(max_length=100, null=True, )
+    latitude = models.CharField(max_length=100, null=True, )
+    longitude = models.CharField(max_length=100, null=True, )
 
-    localization = models.CharField(max_length=100,null=True)
     def publish(self):
         self.published_date = timezone.now()
         self.save()
